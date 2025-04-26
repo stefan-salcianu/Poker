@@ -1,0 +1,29 @@
+:root {
+  --grey-tone: silver;
+  --golden-tone: rgb(196, 204, 109);
+  --blue-tone: rgb(144, 229, 200);
+}
+#table {
+  position: absolute !important;
+  height: 70vh;
+  width: 70vw;
+  padding: 10px;
+  background-color: var(--golden-tone);
+  border: double;
+  border-radius: 10px;
+  border-width: 15px;
+  border-color: var(--grey-tone);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#levi {
+  height: auto;
+  width: 13%;
+  min-width: 80px;
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+}
