@@ -4,18 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="poker.css" />
-    <script src="poker.js"></script>
+    <script src="poker.js" defer></script>
     <title>Poker_Beta</title>
   </head>
   <body style="background-color: rgb(50, 60, 73)">
     <div style="height: 30px">Hello</div>
-    <button id="practice_button">Practice</button>
+    <button id="side-button">Side pot</button>
+    <button id="dealer-button">Dealer</button>
     <div id="table">
       <img id="levi" src="images/Levi-removebg-preview.png" alt="" />
       <button id="hit_button">Hit</button>
-      <p id="player 1">Stack: 10%</p>
-      <p id="player 2" >Stack: 90%</p>
-      <p id="player 3" >Stack: 90%</p>
-      <p id="player 4" >Stack: 90%</p>
+      <p id="player1" ><span class="identity">Player 1  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player2"><span class="identity">Player 2  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player3"><span class="identity">Player 3  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player4"><span class="identity">Player 4  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player5"><span class="identity">Player 5  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player6"><span class="identity">Player 6  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player7"><span class="identity">Player 7  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>
+      <p id="player8"><span class="identity">Player 8  </span><span class="stack">Stack: 0 </span><span class="bet">Bet: 0</span></p>    
+      <p id="pot">Main pot:0</p>
+      <p id="side-pot" class="hidden">Side:0</p>  
+<img src="images/dealer-removebg-preview.png" id="dealer-disck"alt="">
+<img src="images/Small_blind.png" id="small-blind-disc" alt="Small Blind">
+<img src="images/Big_blind.png" id="big-blind-disc" alt="Big Blind">
+
   </body>
 </html>

@@ -1,29 +1,57 @@
-const hit = document.getElementById("hit_button");
-const stay = document.getElementById("stay_button");
-const deal = document.getElementById("deal_button");
-const again = document.getElementById("pg_button");
-const dealer1 = document.getElementById("dealer_card1");
-const dealer2 = document.getElementById("dealer_card2");
-const player = document.getElementById("player_card");
-const player0 = document.getElementById("player_card0");
-const table = document.getElementById("table");
-const hit1 = document.getElementById("player_card1");
-const hit2 = document.getElementById("player_card2");
-const hit3 = document.getElementById("player_card3");
-const hit4 = document.getElementById("player_card4");
-const hit5 = document.getElementById("player_card5");
-const hit6 = document.getElementById("player_card6");
-const dealer3 = document.getElementById("dealer_card3");
-const dealer4 = document.getElementById("dealer_card4");
-const dealer5 = document.getElementById("dealer_card5");
-const dealer6 = document.getElementById("dealer_card6");
-const musicButton = document.getElementById("playMusic");
-const pauseImg = document.getElementById("pause");
-const playImg = document.getElementById("play");
-const soundText = document.getElementById("soundText");
-const soundIcon = document.getElementById("soundIcon");
-const bustOdds_hit = document.getElementById("bustOdds_hit");
-const winOdds = document.getElementById("winOdds");
-const loseOdds = document.getElementById("loseOdds");
-const pushOdds = document.getElementById("pushOdds");
-const practice = document.getElementById("practice_button");
+const player1 = document.getElementById("player1");
+const player2 = document.getElementById("player2");
+const player3 = document.getElementById("player3");
+const player4 = document.getElementById("player4");
+const player5 = document.getElementById("player5");
+const player6 = document.getElementById("player6");
+const player7 = document.getElementById("player7");
+const player8 = document.getElementById("player8");
+const sideButton = document.getElementById("side-button");
+const sidePot = document.getElementById("side-pot");
+const dealerButton = document.getElementById("dealer-button");
+const dealerDisc = document.getElementById("dealer-disck");
+const smallBlindDisc = document.getElementById("small-blind-disc");
+const bigBlindDisc = document.getElementById("big-blind-disc");
+
+sideButton.addEventListener("click", () => {
+  sidePot.classList.toggle("hidden");
+});
+
+const playerPositions = [
+  { left: "15%", top: "70%" },
+  { left: "35%", top: "71%" },
+  { left: "66%", top: "71%" },
+  { left: "80%", top: "70%" },
+  { left: "80%", top: "50%" },
+  { left: "66%", top: "36%" },
+  { left: "35%", top: "36%" },
+  { left: "15%", top: "50%" },
+];
+
+let currentPlayerIndex = 0;
+
+function updatePositions() {
+  // Calculate indices for small and big blinds
+  const smallBlindIndex = (currentPlayerIndex + 1) % playerPositions.length;
+  const bigBlindIndex = (currentPlayerIndex + 2) % playerPositions.length;
+
+  // Update dealer position
+  dealerDisc.style.left = playerPositions[currentPlayerIndex].left;
+  dealerDisc.style.top = playerPositions[currentPlayerIndex].top;
+
+  // Update small blind position
+  smallBlindDisc.style.left = playerPositions[smallBlindIndex].left;
+  smallBlindDisc.style.top = playerPositions[smallBlindIndex].top;
+
+  // Update big blind position
+  bigBlindDisc.style.left = playerPositions[bigBlindIndex].left;
+  bigBlindDisc.style.top = playerPositions[bigBlindIndex].top;
+}
+
+dealerButton.addEventListener("click", () => {
+  currentPlayerIndex = (currentPlayerIndex + 1) % playerPositions.length;
+  updatePositions();
+});
+
+// Initialize positions
+updatePositions();
